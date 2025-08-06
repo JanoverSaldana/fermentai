@@ -1,0 +1,11 @@
+# Archivos que ya no son necesarios para GitHub Pages
+
+# Firebase related files (comentados para referencia)
+# apphosting.yaml
+# src/ai/
+
+# Server actions (reemplazados por mock services)
+# src/app/actions.ts (mantenido para referencia pero no usado)
+
+# Nota: Estos archivos se mantienen para poder restaurar funcionalidades
+# completas en el futuro, pero no se usan en la build estática.

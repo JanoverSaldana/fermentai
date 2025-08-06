@@ -37,7 +37,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import type { Vineyard, Message } from "@/types";
-import { chatWithFermentia } from "@/app/actions";
+import { mockChatWithFermentia } from "@/services/chatService";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getVineyards } from "@/lib/data";
@@ -85,7 +85,7 @@ const ChatPanel: React.FC = () => {
 
     try {
       const chatHistory = newMessages; // No filtrar, enviar todo el historial
-      const response = await chatWithFermentia(chatHistory, userMessage.content);
+      const response = await mockChatWithFermentia(chatHistory, userMessage.content);
       const assistantMessage: Message = { id: (Date.now() + 1).toString(), role: 'assistant', content: response.text };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
